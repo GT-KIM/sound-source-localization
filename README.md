@@ -33,7 +33,7 @@ Environments
 matplotlib  
 numpy  
 webrtcvad  
-(optional) librosa ( if you wanna plotting input as spectrogram )  
+librosa
 
 
 # Usage
