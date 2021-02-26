@@ -2,9 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pyaudio
 import wave
-import os
 import webrtcvad
-from librosa import stft
 import math
 
 

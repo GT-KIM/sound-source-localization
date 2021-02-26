@@ -141,6 +141,7 @@ def srp_phat(raw_array,vad_flag, W, Q_polar) :#, ax1, ax2) :
                         iter_mic += 1
     Y = np.real(Y)
 
+    # Post-processing
     top4 = Y.argsort()[-4:][::-1]
     #bestY = np.zeros(Y.shape)
     #bestY[top3] = Y[top3]
