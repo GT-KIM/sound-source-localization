@@ -160,10 +160,6 @@ def signal_handler(sig, frame) :
     sys.exit(0)
 
 def main() :
-    #fig = plt.figure()
-    #plt.ion()
-    #ax1 = plt.subplot(2, 1, 1)
-    #ax2 = plt.subplot(2, 1, 2)
     offline = np.load("E:\\Test/W_fastest.npz")
     W = offline['W']
     Q_array = offline['Q']
@@ -180,7 +176,7 @@ def main() :
     global_flag = list()
 
     while True :
-        stereo1, stereo2 = audio_record2(CHANNELS=2, RATE=16000, _RECORD_SECONDS=0.064)
+        stereo1, stereo2 = audio_record(CHANNELS=2, RATE=16000, _RECORD_SECONDS=0.064)
         frame1, frame4 = stereo2mono(stereo1)
         frame2, frame3 = stereo2mono(stereo2)
         vad_flags = audio_vad(frame1, frame2, frame3, frame4)

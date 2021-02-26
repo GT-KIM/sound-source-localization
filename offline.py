@@ -3,28 +3,24 @@
 SRP-PHAT OFFLINE
 
 """
-import matplotlib.pyplot as plt
-import numpy as np
+
 from numpy.linalg import svd
-from scipy.spatial import KDTree
-import pickle
-import math
+
 from utils import *
 # Microphone array location
 # [pos_x, pos_y, pos_z]
 # unit : cm
-
-#microphone_array = np.array([[-0.153, 0, 0],[-0.038,0,0.04],[0.038,0,0.04],[0.148,0,0]])
-#microphone_array = np.array([[-0.038,0,0.04],[0.038,0,0.04]])
 microphone_array = np.array([[-0.170, 0, 0],[-0.04,0,0.04],[0.045,0,0.04],[0.160,0,0]])
 
 # Generate circular Q array
 nAngles = 19 # 0 ~ 180 deg
 nDist = 5 # 0.1m ~ 1.0m
 # Generate Q array
+# If you want a rectangular Q array, use below 3 lines.
 #Q_array = (np.mgrid[-1:1:0.05, 0:1:0.05])
 #Q_array = np.reshape(Q_array, [2,-1])
 #Q_array = np.concatenate((Q_array, np.zeros((1,Q_array.shape[1]))), axis= 0)
+# Else, Q array is circular shape.
 Q_array = np.zeros((3, int(nAngles * nDist)))
 Q_polar = np.zeros((3, int(nAngles * nDist)))
 for ang in range(nAngles) :
@@ -72,4 +68,4 @@ for iter_Q in range(Q_array.shape[1]) :
 
 print("DONE")
 print(W.shape)
-np.savez("E:\\Test/W_fastest.npz", Q=Q_array, Q_polar = Q_polar, W=W)
+np.savez("./W_fastest.npz", Q=Q_array, Q_polar = Q_polar, W=W)

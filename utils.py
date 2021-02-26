@@ -7,67 +7,8 @@ import webrtcvad
 from librosa import stft
 import math
 
+
 def audio_record(CHANNELS=2, RATE=16000, _RECORD_SECONDS=3):
-    audio1 = pyaudio.PyAudio()
-    audio2 = pyaudio.PyAudio()
-
-    CHUNK = int(RATE / 10)
-    FORMAT = pyaudio.paInt16
-
-    # start recording
-    stream1 = audio1.open(format=pyaudio.paInt16,
-                          channels=2,
-                          rate=RATE,
-                          input=True,
-                          input_device_index=2,
-                          frames_per_buffer=CHUNK)
-
-    stream2 = audio2.open(format=pyaudio.paInt16,
-                            channels=2,
-                            rate=RATE,
-                            input=True,
-                            input_device_index=1,
-                            frames_per_buffer=CHUNK)
-
-
-
-    print("Recording")
-    frames1 = []
-    frames2 = []
-
-    for i in range(0, int(RATE / CHUNK * _RECORD_SECONDS)):
-        data1 = stream1.read(CHUNK)
-        data2 = stream2.read(CHUNK)
-        frames1.append(data1)
-        frames2.append(data2)
-    print("finish Recording")
-
-    # stop recording
-    stream1.stop_stream()
-    stream1.close()
-    audio1.terminate()
-    stream2.stop_stream()
-    stream2.close()
-    audio2.terminate()
-
-    waveFile = wave.open("E:\\Test/1.wav", 'wb')
-    waveFile.setnchannels(CHANNELS)
-    waveFile.setsampwidth(audio1.get_sample_size(FORMAT))
-    waveFile.setframerate(RATE)
-    waveFile.writeframes(b''.join(frames1))
-    waveFile.close()
-    waveFile = wave.open("E:\\Test/2.wav", 'wb')
-    waveFile.setnchannels(CHANNELS)
-    waveFile.setsampwidth(audio2.get_sample_size(FORMAT))
-    waveFile.setframerate(RATE)
-    waveFile.writeframes(b''.join(frames2))
-    waveFile.close()
-    frames1 = b''.join(frames1)
-    frames2 = b''.join(frames2)
-
-    return frames1, frames2
-
-def audio_record2(CHANNELS=2, RATE=16000, _RECORD_SECONDS=3):
     audio1 = pyaudio.PyAudio()
     audio2 = pyaudio.PyAudio()
 
