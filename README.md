@@ -1,9 +1,9 @@
 # sound-source-localization using SRP-PHAT
 ---
-Project : Sound source localization + voice activity detection on Robot platform
+Project : Sound source localization + voice activity detection on Robot platform  
 
-Sound source localization algorithm : SRP-PHAT (Steered Response Power PHAse Transform)
-Voice activity detection algorithm : webrtcvad (https://github.com/wiseman/py-webrtcvad)
+Sound source localization algorithm : SRP-PHAT (Steered Response Power PHAse Transform)  
+Voice activity detection algorithm : webrtcvad (https://github.com/wiseman/py-webrtcvad)  
 
 # Demo
 ---
@@ -22,3 +22,8 @@ Environments
 > Windows10 (OS)  
 > Python (VAD & SSL algorithm)  
 > C# (Control robot)  
+
+
+# Flowchart
+---
+![image1](./demo/image1.png)
