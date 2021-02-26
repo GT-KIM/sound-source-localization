@@ -47,3 +47,8 @@ librosa
 
 
 ## IF you want to use SRP-PHAT algorithm only, use offline.py and srp_phat function in main.py
+
+
+# Contact
+---
+Gwantae Kim (gtkim@ispl.korea.ac.kr, kgt1103211@gmail.com)
