@@ -17,8 +17,8 @@ It also can follow human voice.
 
 # Robot & Environments
 ---
-The robot is FURo-D model(http://www.futurerobot.co.kr/).
-Environments
+The robot is FURo-D model(http://www.futurerobot.co.kr/).  
+Environments  
 > Windows10 (OS)  
 > Python (VAD & SSL algorithm)  
-> C# (Move robot)  
+> C# (Control robot)  
